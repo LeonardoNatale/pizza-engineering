@@ -1,0 +1,10 @@
+.vscode
+*.pyc
+*.db
+.env
+dist/
+/*.ipynb
+.DS_Store
+*.wal
+.venv/
+*.ipynb
