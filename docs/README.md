@@ -29,6 +29,9 @@ flowchart TB
 
     subgraph analytics
         analytics.kpis(kpis)
+        analytics.peak_hours(peak_hours)
+        analytics.sales_by_month(sales_by_month)
+        analytics.top10_bestseller(top10_bestseller)
     end
 
 
@@ -53,6 +56,12 @@ flowchart TB
     end
 
     pizza_police.orders --> analytics.kpis
+    pizza_police.pizze --> analytics.kpis
+    pizza_police.orders --> analytics.peak_hours
+    pizza_police.orders --> analytics.sales_by_month
+    pizza_police.pizze --> analytics.sales_by_month
+    pizza_police.orders --> analytics.top10_bestseller
+    pizza_police.pizze --> analytics.top10_bestseller
     staging.orders --> pizza_police.orders
     staging.pizza_ingredients --> pizza_police.orders
     staging.pizza_ingredients --> pizza_police.pizze
