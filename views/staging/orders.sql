@@ -1,23 +1,19 @@
-with orders_data as (
-
-    select
+WITH orders_data AS (
+    SELECT
         ro.order_id,
         rod.pizza_id,
-        ro."datetime",
+        ro.datetime,
         rod.quantity
-    from raw.orders ro
-    join raw.order_details rod
-    using (order_id)
-
+    FROM
+        raw.orders ro
+        JOIN raw.order_details rod USING (order_id)
 )
-
-select 
+SELECT
     orders_data.order_id,
-    raw.pizze.pizza_type_id,
-    raw.pizze.size,
+    rp.pizza_type_id,
+    rp.size,
     orders_data.quantity,
     orders_data.datetime
-from orders_data
-join raw.pizze
-using (pizza_id)
-
+FROM
+    orders_data
+    JOIN raw.pizze AS rp USING (pizza_id)

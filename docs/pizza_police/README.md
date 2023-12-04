@@ -1,18 +1,17 @@
-# staging
+# pizza_police
 
 ## Table of contents
 
-- [staging.orders](#staging.orders)
-- [staging.pizza_ingredients](#staging.pizza_ingredients)
-- [staging.pizze](#staging.pizze)
+- [pizza_police.orders](#pizza_police.orders)
+- [pizza_police.pizze](#pizza_police.pizze)
 
 ## Views
 
-### staging.orders
+### pizza_police.orders
 
 ```sql
 SELECT *
-FROM staging.orders
+FROM pizza_police.orders
 ```
 
 | Column        | Type           | Description   | Unique   |
@@ -23,23 +22,11 @@ FROM staging.orders
 | quantity      | `BIGINT`       |               |          |
 | size          | `VARCHAR`      |               |          |
 
-### staging.pizza_ingredients
+### pizza_police.pizze
 
 ```sql
 SELECT *
-FROM staging.pizza_ingredients
-```
-
-| Column          | Type      | Description   | Unique   |
-|:----------------|:----------|:--------------|:---------|
-| ingredient_name | `VARCHAR` |               |          |
-| pizza_type_id   | `VARCHAR` |               |          |
-
-### staging.pizze
-
-```sql
-SELECT *
-FROM staging.pizze
+FROM pizza_police.pizze
 ```
 
 | Column        | Type      | Description   | Unique   |

@@ -3,6 +3,7 @@
 ## Schemas
 
 - [`analytics`](./analytics)
+- [`pizza_police`](./pizza_police)
 - [`raw`](./raw)
 - [`staging`](./staging)
 
@@ -12,9 +13,11 @@
 %%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
 flowchart TB
     analytics(analytics)
+    pizza_police(pizza_police)
     raw(raw)
     staging(staging)
-    staging --> analytics
+    pizza_police --> analytics
+    staging --> pizza_police
     raw --> staging
 ```
 
@@ -29,6 +32,12 @@ flowchart TB
     end
 
 
+    subgraph pizza_police
+        pizza_police.orders(orders)
+        pizza_police.pizze(pizze)
+    end
+
+
     subgraph raw
         raw.order_details(order_details)
         raw.orders(orders)
@@ -38,22 +47,21 @@ flowchart TB
 
 
     subgraph staging
-        staging.ingredients(ingredients)
         staging.orders(orders)
         staging.pizza_ingredients(pizza_ingredients)
-        staging.pizza_types(pizza_types)
         staging.pizze(pizze)
     end
 
-    staging.orders --> analytics.kpis
-    staging.pizze --> analytics.kpis
-    raw.pizza_types --> staging.ingredients
+    pizza_police.orders --> analytics.kpis
+    staging.orders --> pizza_police.orders
+    staging.pizza_ingredients --> pizza_police.orders
+    staging.pizza_ingredients --> pizza_police.pizze
+    staging.pizze --> pizza_police.pizze
     raw.order_details --> staging.orders
     raw.orders --> staging.orders
     raw.pizze --> staging.orders
     raw.pizza_types --> staging.pizza_ingredients
-    staging.ingredients --> staging.pizza_ingredients
-    raw.pizza_types --> staging.pizza_types
+    raw.pizza_types --> staging.pizze
     raw.pizze --> staging.pizze
 ```
 
