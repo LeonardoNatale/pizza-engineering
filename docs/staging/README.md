@@ -4,7 +4,7 @@
 
 - [staging.orders](#staging.orders)
 - [staging.pizza_ingredients](#staging.pizza_ingredients)
-- [staging.pizze](#staging.pizze)
+- [staging.pizzas](#staging.pizzas)
 
 ## Views
 
@@ -35,11 +35,11 @@ FROM staging.pizza_ingredients
 | ingredient_name | `VARCHAR` |               |          |
 | pizza_type_id   | `VARCHAR` |               |          |
 
-### staging.pizze
+### staging.pizzas
 
 ```sql
 SELECT *
-FROM staging.pizze
+FROM staging.pizzas
 ```
 
 | Column        | Type      | Description   | Unique   |

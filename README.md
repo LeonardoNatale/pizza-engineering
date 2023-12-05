@@ -42,14 +42,14 @@ flowchart TB
         raw.order_details(order_details)
         raw.orders(orders)
         raw.pizza_types(pizza_types)
-        raw.pizze(pizze)
+        raw.pizzas(pizzas)
     end
 
 
     subgraph staging
         staging.orders(orders)
         staging.pizza_ingredients(pizza_ingredients)
-        staging.pizze(pizze)
+        staging.pizzas(pizzas)
     end
 
     pizza_police.orders --> analytics.kpis
@@ -62,11 +62,11 @@ flowchart TB
     staging.orders --> pizza_police.orders
     staging.pizza_ingredients --> pizza_police.orders
     staging.pizza_ingredients --> pizza_police.pizze
-    staging.pizze --> pizza_police.pizze
+    staging.pizzas --> pizza_police.pizze
     raw.order_details --> staging.orders
     raw.orders --> staging.orders
-    raw.pizze --> staging.orders
+    raw.pizzas --> staging.orders
     raw.pizza_types --> staging.pizza_ingredients
-    raw.pizza_types --> staging.pizze
-    raw.pizze --> staging.pizze
+    raw.pizza_types --> staging.pizzas
+    raw.pizzas --> staging.pizzas
 ```

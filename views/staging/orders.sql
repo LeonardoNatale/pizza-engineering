@@ -16,4 +16,4 @@ SELECT
     orders_data.datetime
 FROM
     orders_data
-    JOIN raw.pizze AS rp USING (pizza_id)
+    JOIN raw.pizzas AS rp USING (pizza_id)

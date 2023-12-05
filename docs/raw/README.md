@@ -5,7 +5,7 @@
 - [raw.order_details](#raw.order_details)
 - [raw.orders](#raw.orders)
 - [raw.pizza_types](#raw.pizza_types)
-- [raw.pizze](#raw.pizze)
+- [raw.pizzas](#raw.pizzas)
 
 ## Views
 
@@ -49,11 +49,11 @@ FROM raw.pizza_types
 | name          | `VARCHAR` |               |          |
 | pizza_type_id | `VARCHAR` |               |          |
 
-### raw.pizze
+### raw.pizzas
 
 ```sql
 SELECT *
-FROM raw.pizze
+FROM raw.pizzas
 ```
 
 | Column        | Type      | Description   | Unique   |

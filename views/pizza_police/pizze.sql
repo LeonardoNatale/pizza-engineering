@@ -1,7 +1,7 @@
 SELECT
     *
 FROM
-    staging.pizze sp
+    staging.pizzas sp
 WHERE
     NOT EXISTS (
         SELECT

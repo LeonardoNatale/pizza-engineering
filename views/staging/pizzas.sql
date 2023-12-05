@@ -5,5 +5,5 @@ SELECT
     size,
     price
 FROM
-    raw.pizze
+    raw.pizzas
     JOIN raw.pizza_types USING (pizza_type_id)
