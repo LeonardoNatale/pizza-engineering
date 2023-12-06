@@ -1,10 +1,4 @@
 SELECT
-    'n_orders' AS metric,
-    COUNT(*) AS value
-FROM
-    pizza_police.orders
-UNION
-SELECT
     'avg_orders_per_day' AS metric,
     round(count(DISTINCT order_id) / 365, 2) AS value
 FROM
@@ -26,7 +20,7 @@ UNION
 SELECT
     'total_sales' AS metric,
     FORMAT(
-        '{:,}',
+        '{:,} $',
         CAST(ROUND(SUM(quantity * price)) AS BIGINT)
     ) AS value,
 FROM
