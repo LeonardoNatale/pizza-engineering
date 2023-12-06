@@ -18,7 +18,4 @@ WHERE
                 'Pineapple',
                 'Thai Sweet Chilli Sauce'
             )
-    )
-ORDER BY
-    sp.pizza_type_id,
-    sp.price;
+    );

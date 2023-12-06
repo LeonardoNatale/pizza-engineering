@@ -18,7 +18,4 @@ WHERE
                 'Pineapple',
                 'Thai Sweet Chilli Sauce'
             )
-    )
-ORDER BY
-    so.datetime,
-    so.order_id;
+    );

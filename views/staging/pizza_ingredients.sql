@@ -6,7 +6,7 @@ WITH split_ingredients AS (
         raw.pizza_types
 )
 SELECT
-    split_ingredients.pizza_type_id,
-    split_ingredients.ingredient_name
+    pizza_type_id,
+    ingredient_name
 FROM
     split_ingredients
