@@ -1,13 +1,13 @@
 SELECT
     *
 FROM
-    staging.pizzas sp
+    pizze.staging__pizzas sp
 WHERE
     NOT EXISTS (
         SELECT
             1
         FROM
-            staging.pizza_ingredients pi
+            pizze.staging__pizza_ingredients pi
         WHERE
             pi.pizza_type_id = sp.pizza_type_id
             AND pi.ingredient_name IN (

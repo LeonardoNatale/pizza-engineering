@@ -1,11 +1,11 @@
 SELECT
-    "name",
+    name,
     sum(quantity) AS total
 FROM
-    pizza_police.orders
-    JOIN pizza_police.pizze USING (pizza_type_id)
+    pizze.pizza_police__orders
+    JOIN pizze.pizza_police__pizze USING (pizza_type_id)
 GROUP BY
-    "name"
+    name
 ORDER BY
     total DESC
 LIMIT

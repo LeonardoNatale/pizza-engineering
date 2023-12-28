@@ -1,12 +1,13 @@
 WITH split_ingredients AS (
     SELECT
         pizza_type_id,
-        UNNEST(STRING_SPLIT(ingredients, ', ')) AS ingredient_name
+        ingredient
     FROM
-        raw.pizza_types
+        pizze.raw__pizza_types,
+        UNNEST(SPLIT(ingredients, ', ')) AS ingredient
 )
 SELECT
     pizza_type_id,
-    ingredient_name
+    ingredient AS ingredient_name
 FROM
     split_ingredients

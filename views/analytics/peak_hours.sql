@@ -3,11 +3,11 @@ SELECT
         HOUR
         FROM
             datetime
-    ) AS "hour",
+    ) AS hour,
     COUNT(*) AS order_count
 FROM
-    pizza_police.orders
+    pizze.pizza_police__orders
 GROUP BY
-    "hour"
+    hour
 ORDER BY
     order_count DESC;

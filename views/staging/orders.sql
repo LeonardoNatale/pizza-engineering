@@ -5,8 +5,8 @@ WITH orders_data AS (
         datetime,
         quantity
     FROM
-        raw.orders
-        JOIN raw.order_details USING (order_id)
+        pizze.raw__orders
+        JOIN pizze.raw__order_details USING (order_id)
 )
 SELECT
     order_id,
@@ -16,4 +16,4 @@ SELECT
     datetime
 FROM
     orders_data
-    JOIN raw.pizzas USING (pizza_id)
+    JOIN pizze.raw__pizzas USING (pizza_id)
